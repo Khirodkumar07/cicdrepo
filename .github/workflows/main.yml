@@ -225,13 +225,12 @@
 
 ######################################### read secret and variables(username and pw)
 
-name: secret and variables
+
+
 on:
-    push:
-        branches:
-        - main
+    
 jobs:
-    build:
+  build:
         runs-on: ubuntu-latest
         steps:
         - name: checkout code
@@ -240,8 +239,7 @@ jobs:
         - name: get secret value
           env:
             DB_USERNAME_KEY : ${{secrets.DB_USERNAME}}
-          run: python test1.py        
-
+          run: python test1.py 
         
 
 
