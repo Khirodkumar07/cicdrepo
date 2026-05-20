@@ -228,18 +228,21 @@
 
 
 on:
-    
+    push:
+        branches:
+        - main
+
 jobs:
   build:
-        runs-on: ubuntu-latest
-        steps:
-        - name: checkout code
-          uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
 
-        - name: get secret value
-          env:
-            DB_USERNAME_KEY : ${{secrets.DB_USERNAME}}
-          run: python test1.py 
+    - name: get secret value
+      env:
+        DB_USERNAME_KEY : ${{secrets.DB_USERNAME}}
+      run: python test1.py 
         
 
 
