@@ -84,7 +84,28 @@
 #           run: echo "job6"      
 
 
-# session-15 content
+#################### session-15 content
+
+# name: workflow demo2
+# on:
+#     push:
+#         branches:
+#         - main
+# jobs:
+#     job1:
+#         runs-on: ubuntu-latest
+#         steps:
+#         - name: checkout code
+#           uses: actions/checkout@v2
+
+#         - name: install required dependencies
+#           run: pip install pandas
+
+#         - name: run test.py
+#           run: python test.py
+
+
+################### requirements.txt content
 
 name: workflow demo2
 on:
@@ -99,9 +120,13 @@ jobs:
           uses: actions/checkout@v2
 
         - name: install required dependencies
-          run: pip install pandas
+          run: pip install -r requirements.txt
 
         - name: run test.py
           run: python test.py
+
+
+
+
 
         
