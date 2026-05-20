@@ -242,7 +242,8 @@ jobs:
     - name: get secret value
       env:
         DB_USERNAME_KEY : ${{secrets.DB_USERNAME}}
-      run: python test1.py 
+      run: python test1.py
+      
         
 
 
